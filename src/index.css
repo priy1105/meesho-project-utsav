@@ -1,0 +1,238 @@
+@import "tailwindcss";
+:root {
+  --brand-primary: #4a004a;
+  --brand-secondary: #7e2a7e;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafb;
+  color: #1a202c;
+}
+
+#hero {
+  background-color: #E9D5FF;
+}
+
+.chart-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
+  max-height: 400px;
+}
+
+@media (min-width: 768px) {
+  .chart-container {
+      height: 350px;
+  }
+}
+
+/* --- Nav Bar Styles (Pill Effect) --- */
+.nav-link {
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  transition: color 0.3s, background-color 0.3s;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  background-color: #f3e8ff;
+  color: var(--brand-primary);
+}
+
+.nav-link.active {
+  background-color: var(--brand-primary);
+  color: white;
+}
+/* --- End of Nav Bar Styles --- */
+
+
+/* --- Solution Section Tab Styles --- */
+.tab-button.active {
+  background-color: var(--brand-primary);
+  color: white;
+}
+/* --- End of Tab Styles --- */
+
+
+/* --- Risk Assessment Section Styles (Card Layout) --- */
+#risks {
+  background-color: #f9fafb;
+}
+
+.risk-card {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+.risk-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(74, 0, 74, 0.07), 0 4px 6px -2px rgba(74, 0, 74, 0.05);
+  border-color: #d8b4fe;
+}
+
+.risk-card.active {
+  background: var(--brand-primary);
+  color: white;
+  border-color: var(--brand-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(74, 0, 74, 0.1), 0 4px 6px -2px rgba(74, 0, 74, 0.07);
+}
+
+.risk-card.active .text-gray-500 {
+  color: #e9d5ff;
+}
+
+.risk-icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  background-color: #f3e8ff;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  transition: background-color 0.3s;
+}
+
+.risk-card.active .risk-icon {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.risk-content-area {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  height: 100%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.risk-icon-large {
+  font-size: 2.5rem;
+  margin-right: 1.5rem;
+}
+/* --- End of Risk Assessment Section Styles --- */
+
+
+/* --- Stat Card Styles for Challenge Section --- */
+.challenge-section {
+  background: #f8f9fa;
+}
+
+.stat-card-v2 {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  animation: fadeInSlideUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.stat-card-v2:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.stat-card-v2:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.stat-card-v2:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.06);
+}
+
+.stat-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* --- End of Stat Card Styles --- */
+
+
+.text-brand-primary {
+  color: var(--brand-primary);
+}
+
+.bg-brand-primary {
+  background-color: var(--brand-primary);
+}
+
+.bg-brand-secondary {
+  background-color: var(--brand-secondary);
+}
+
+.border-brand-primary {
+  border-color: var(--brand-primary);
+}
+
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Custom Slider Styles --- */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background: #e9d5ff;
+  height: 0.5rem;
+  border-radius: 1rem;
+}
+input[type="range"]::-moz-range-track {
+  background: #e9d5ff;
+  height: 0.5rem;
+  border-radius: 1rem;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -6px;
+  background-color: var(--brand-primary);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
+}
+input[type="range"]::-moz-range-thumb {
+  border: none;
+  background-color: var(--brand-primary);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
+}
+/* --- End of Custom Slider Styles --- */
